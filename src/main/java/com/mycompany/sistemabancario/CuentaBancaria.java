@@ -58,14 +58,22 @@ public class CuentaBancaria {
   public void retirar(double monto){
       if (monto > 0 && monto <= saldo) {
           saldo -= monto;
-          System.out.println("Retiro exitoso su nuevo saldo es: " + saldo);
+          System.out.println(" Retiro exitoso su nuevo saldo es: " + saldo);
       }
       else  {
-          System.out.println("error en su transacción, verifique el monto y saldo disponible");
+          System.out.println(" error en su transacción, verifique el monto y saldo disponible");
       }
   }
   
   public double consultarSaldo(){
       return saldo;
   }
+  
+  @Override
+   public String toString(){
+       return " CuentaBancaria " +
+              " Número: " + numeroCuenta + "\n" +
+              " Propietario: " + propietario.getNombre() + "\n" +
+              " Saldo: " + saldo;
+   }       
 }
